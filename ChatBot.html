@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Popup</title>
+    <style>
+        /* Style the popup */
+        #chatbot-popup {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            bottom: 20px; /* 20px from the bottom */
+            right: 20px; /* 20px from the right */
+            width: 300px; /* Set a width */
+            height: 400px; /* Set a height */
+            border: 1px solid #ccc; /* Gray border */
+            background-color: white; /* White background */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add some shadow */
+            z-index: 1000; /* Ensure it is above other content */
+        }
+    </style>
+</head>
+<body>
+    <!-- Popup Container -->
+    <div id="chatbot-popup">
+        <script>
+            window.embeddedChatbotConfig = {
+                chatbotId: "zm71fPc6Lj74WkGE7fg5l",
+                domain: "www.chatbase.co"
+            }
+        </script>
+        <script
+            src="https://www.chatbase.co/embed.min.js"
+            chatbotId="zm71fPc6Lj74WkGE7fg5l"
+            domain="www.chatbase.co"
+            defer>
+        </script>
+    </div>
+
+    <script>
+        // JavaScript to handle the popup display
+        window.onscroll = function() {
+            let popup = document.getElementById('chatbot-popup');
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                popup.style.display = 'block'; // Show the popup when scrolled down 100px
+            } else {
+                popup.style.display = 'none'; // Hide the popup otherwise
+            }
+        };
+    </script>
+</body>
+</html>
